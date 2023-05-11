@@ -24,3 +24,7 @@ This 'XML' file contains a pre-trained model that was created through extensive 
 
 ### STEP 1:
 Is to create a `dataset_creator.py` which will save images captured from camera into a folder in the local directory and the id of the person along with there name in the database `FaceBase.db`.
+After importing the libraries, we shall begin writing the code.
+```
+faceDetect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+```
