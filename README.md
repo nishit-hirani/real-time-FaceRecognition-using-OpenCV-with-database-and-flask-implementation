@@ -28,3 +28,5 @@ After importing the libraries, we shall begin writing the code.
 ```
 faceDetect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 ```
+Loading the cascade for face using cv2 function CascadeClassifier
+
