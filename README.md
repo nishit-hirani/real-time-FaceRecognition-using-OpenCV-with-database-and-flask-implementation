@@ -4,3 +4,5 @@ This projects is about face recognition which is connected with a backend and is
 Dependencies to run the project:
 - pip install Flask
 - pip install db-sqlite3
+- pip install opencv-python
+- pip install numpy
