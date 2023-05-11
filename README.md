@@ -21,3 +21,6 @@ Size and location of certain facial features. To be specific, nose bridge, mouth
 
 Intel's 'haarcascade_frontalface_default.xml'
 This 'XML' file contains a pre-trained model that was created through extensive training and uploaded by Rainer Lienhart on behalf of Intel in 2000.
+
+### STEP 1:
+Is to create a `dataset_creator.py` which will save images captured from camera into a folder in the local directory and the id of the person along with there name in the database `FaceBase.db`.
