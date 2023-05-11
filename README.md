@@ -7,6 +7,9 @@ This projects is about face recognition which is connected with a backend and is
 - pip install opencv-python
 - pip install numpy
 
+OpenCV will be used to draw the rectangle on the face. OpenCv as well as haar cascade frontal face xml files will be used to locate the coordinates of the face.
+This algorithm is composed of two parts – training as well as detection. It not only detects faces in the images but is applicable to videos also. There is a limitation of this algorithm as it works with only frontal faces which is overcomed by deep learning models such as ssd, yolo, faster rcnn.
+
 ### The Haar-Cascade Face Detection Algorithm : 
 The Haar-Cascade Face Detection Algorithm is a sliding-window type of algorithm that detects objects based upon its features. 
 ### Haar Face Features:
