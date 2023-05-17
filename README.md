@@ -58,4 +58,4 @@ id=input("enter id")
 name=input("enter name")
 ```
 A simple py code to ask the user to input the data.
-Note: When you enter a name to be stored in database in the database, enter the name in __double quotes__
+Note: When you enter a name to be stored in database in the database, enter the name in ***double quotes***
