@@ -29,4 +29,7 @@ After importing the libraries, we shall begin writing the code.
 faceDetect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 ```
 Loading the cascade for face using cv2 function CascadeClassifier
-
+```
+cam = cv2.VideoCapture(0)
+```
+Create a cam variable to get camera access, for my web cam I passed the parameter as 0 (zero) but you can try values 1,2 and 3 or any other number according to your webcam
