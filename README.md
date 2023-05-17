@@ -59,3 +59,25 @@ name=input("enter name")
 ```
 A simple py code to ask the user to input the data.
 Note: When you enter a name to be stored in database in the database, enter the name in ***double quotes***
+
+```
+sampleNum=0
+while(True):
+    ret,img=cam.read()
+    gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+    faces=faceDetect.detectMultiScale(gray,1.3,5);
+    for(x,y,w,h) in faces:
+        sampleNum=sampleNum+1
+        cv2.imwrite("dataSet/User."+str(id)+"."+str(sampleNum)+".jpg",gray[y:y+h,x:x+w])
+        cv2.rectangle(img, (x,y), (x+w,y+h), (0,0,255), 2)
+        cv2.waitKey(1000);
+    cv2.imshow("Face",img);
+    cv2.waitKey(1)
+    if(sampleNum>20):
+        break;
+cam.release()
+cv2.destroyAllWindows()
+```
+The next portion of the code converts the taken images into gray scale and detect faces using the .xml file and in the for loop we are storing the images the ***dataSet*** folder with the file name as User.1.(followed by the id number given earlier when creating a database.
+![image](https://github.com/nishit-hirani/real-time-FaceRecognition-using-OpenCV-with-database-and-flask-implementation/assets/89455398/4477be1f-b915-42fd-bf60-f893e32dcba2)
+
