@@ -79,5 +79,6 @@ cam.release()
 cv2.destroyAllWindows()
 ```
 The next portion of the code converts the taken images into gray scale and detect faces using the .xml file and in the for loop we are storing the images the ***dataSet*** folder with the file name as User.1.(followed by the id number given earlier when creating a database.
-![image](https://github.com/nishit-hirani/real-time-FaceRecognition-using-OpenCV-with-database-and-flask-implementation/assets/89455398/4477be1f-b915-42fd-bf60-f893e32dcba2)
+![image](https://github.com/nishit-hirani/real-time-FaceRecognition-using-OpenCV-with-database-and-flask-implementation/assets/89455398/ca722229-7dd9-4bba-a216-7786769af258)
+
 
