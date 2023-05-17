@@ -33,3 +33,29 @@ Loading the cascade for face using cv2 function CascadeClassifier
 cam = cv2.VideoCapture(0)
 ```
 Create a cam variable to get camera access, for my web cam I passed the parameter as 0 (zero) but you can try values 1,2 and 3 or any other number according to your webcam
+
+```
+def insertOrUpdate(Id,Name):
+    conn = sqlite3.connect("FaceBase.db")
+    cmd="SELECT * FROM People WHERE ID="+str(Id)
+    cursor=conn.execute(cmd)
+    isRecordExist=0
+    for row in cursor:
+        isRecordExist=1;
+        
+    if(isRecordExist==1):
+        cmd="UPDATE People SET Name="+str(Name)+"WHERE ID="+str(Id)
+    else:
+        cmd="INSERT INTO People(ID,Name) Values("+str(Id)+","+str(Name)+")"
+    conn.execute(cmd)
+    conn.commit()
+    conn.close()
+```
+Next step I did was to create a fucntion `insertorUpdate` which establishes a connection between the database and the .py file and upadating the table in the databsae when user gives a valid input.
+
+```
+id=input("enter id")
+name=input("enter name")
+```
+A simple py code to ask the user to input the data.
+Note: When you enter a name to be stored in database in the database, enter the name in __double quotes__
