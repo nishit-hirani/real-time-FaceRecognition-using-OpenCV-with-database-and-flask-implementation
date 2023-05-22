@@ -24,6 +24,13 @@ This 'XML' file contains a pre-trained model that was created through extensive 
 
 ### STEP 1:
 Is to create a `dataset_creator.py` which will save images captured from camera into a folder in the local directory and the id of the person along with there name in the database `FaceBase.db`.
+
+For this I have used sqlite3, Open the sqlite software and create a new database.
+Create a new table with name `people` 
+Next we will our first column `ID` and set it as `primary key` and datatype as `INT` because ID's will be stored in the ***integer form***
+Now once we are donw with the ID column, we will create the `NAME` column with `STRING` as it datatype and choose `not null` to be it's constraints.
+Similary add `AGE`,`GENDER` and `CRIMINAL ACTIVITY` column with `STRING` as it's datatype and do not choose any constraints as of now.     
+
 After importing the libraries, we shall begin writing the code.
 ```
 faceDetect = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -111,4 +118,10 @@ While the data is being trained you will see a small where all the images will b
 
 `recognizer.save('recognizer/trainingData.yml')`
 After the data has been trained the data will be saved as `trainingData.yml` in the `recognizer` folder
+ 
+ ### Step3:
+ 
+ This step is one of the crucial steps as it contains the detection of face and in this we will be creating a database and well as the connection of the database will also be established in this step.
+ 
+ As always we will begin the `detector.py` with loading some dependencies.
  
