@@ -144,3 +144,35 @@ fontColor = (255, 0, 0)
  ```
 Making these variables so we don't have to write again and again them while making square around the face and to display the content related to the person we are detecting live.
 
+`faces=faceDetect.detectMultiScale(gray,1.3,5);`
+It uses the function detectMultiScale to detect the upper left corner of the rectangle (x, y) on the face as well as width and height of the rectangle. detectMultiScale function has parameters such as scaling and neighbours.
+
+In the previous line one will get the coordinates of the rectangle. Now it is time to draw the rectangle with these coordinates on the colored image (frame). For this we will make the use of cv2.rectangle where we can specify color of rectangle as well as width of the bounding box. This is executed in a loop.
+
+```
+for(x,y,w,h) in faces:
+        cv2.rectangle(img, (x,y), (x+w,y+h), (0,0,255), 2)
+        id,conf=rec.predict(gray [y:y+h , x:x+w])
+        profile=getProfile(id)
+        if(profile!=None):
+            cv2.putText(img,str(profile[1]),(x,y+h+30),fontFace,fontScale,fontColor)
+            cv2.putText(img,str(profile[2]),(x,y+h+60),fontFace,fontScale,fontColor)
+            cv2.putText(img,str(profile[3]),(x,y+h+90),fontFace,fontScale,fontColor)
+            cv2.putText(img,str(profile[4]),(x,y+h+120),fontFace,fontScale,fontColor)
+        # cv2.putText(img,str(id),(x,y+h),font,2,(255))
+        # cv2.cv.putText(cv2.cv.fromarray(img),str(id),(x,y+h),font,(255))
+    cv2.imshow("Face",img);
+```
+```
+cv2.rectangle(img, (x,y), (x+w,y+h), (0,0,255), 2)
+id,conf=rec.predict(gray [y:y+h , x:x+w])
+ ```
+Coordinates of the rectangle for the face is calculated. In this line such area is sliced from the grayscale image.
+Face area for the colored image is sliced.
+
+Then if the profile is not equal to none, we shall display all the information about that person.
+
+Now to close thee window press 'q' to quit it.
+
+##### Till this step you will be able to detect faces and display information, but it has not been uploaded to the web yet for many till this step it would be enough but for those who want to take it to web proceed the steps below 
+
