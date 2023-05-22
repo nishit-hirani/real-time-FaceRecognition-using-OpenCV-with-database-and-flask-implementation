@@ -172,7 +172,15 @@ Face area for the colored image is sliced.
 
 Then if the profile is not equal to none, we shall display all the information about that person.
 
-Now to close thee window press 'q' to quit it.
+Now to close the window press 'q' to quit it.
 
-##### Till this step you will be able to detect faces and display information, but it has not been uploaded to the web yet for many till this step it would be enough but for those who want to take it to web proceed the steps below 
+The below screenshot is `1.png` from the `output_screenshot` folder. This screenshot is from the time when only 'name' and 'id' was added in the database.
+If you've followed the above steps correctly then it should display all four of the details we added in the database.
+
+![1](https://github.com/nishit-hirani/real-time-FaceRecognition-using-OpenCV-with-database-and-flask-implementation/assets/89455398/a299ae29-80e9-4d8d-8164-6ea550beb938)
+
+
+##### Till this step you will be able to detect faces and display information, but it has not been uploaded to the web yet for many till this step it would be enough but for those who want to take it to web proceed with the steps below 
+
+
 
