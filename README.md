@@ -107,3 +107,8 @@ def getImageWithID(path):
     return IDs,faces
  ```
  
+While the data is being trained you will see a small where all the images will be iterated and on the console you will see the ID nummber simultaneously.
+
+`recognizer.save('recognizer/trainingData.yml')`
+After the data has been trained the data will be saved as `trainingData.yml` in the `recognizer` folder
+ 
