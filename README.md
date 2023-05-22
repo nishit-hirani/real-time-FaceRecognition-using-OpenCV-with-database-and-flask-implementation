@@ -83,3 +83,27 @@ The next portion of the code converts the taken images into gray scale and detec
 
 The picture will be taken within a time interval of 1s and here we are taking max 21 pictures. The more the picture the better will be accuracy.
 Next we are destroying all the windows.
+
+### Step2:
+
+Now we shall make a file `trainer.py` to train the data we have collected earlier.
+
+First we will load all the dependencies, then we will make this function to get the images along with the face ID and go through them to train the data.
+
+```
+def getImageWithID(path):
+    imagePaths=[os.path.join(path,f) for f in os.listdir(path)]
+    faces=[]
+    IDs=[]
+    for imagePath in imagePaths:
+        faceImg = Image.open(imagePath).convert('L');
+        faceNp = np.array(faceImg,'uint8')
+        ID=int(os.path.split(imagePath)[-1].split('.')[1])
+        faces.append(faceNp)
+        print (ID)
+        IDs.append(ID)
+        cv2.imshow("training",faceNp)
+        cv2.waitKey(10)
+    return IDs,faces
+ ```
+ 
