@@ -121,7 +121,26 @@ After the data has been trained the data will be saved as `trainingData.yml` in 
  
  ### Step3:
  
- This step is one of the crucial steps as it contains the detection of face and in this we will be creating a database and well as the connection of the database will also be established in this step.
+ This step is one of the crucial steps as it contains the detection of face.
  
  As always we will begin the `detector.py` with loading some dependencies.
  
+ ```
+ def getProfile(id):
+    conn=sqlite3.connect("FaceBase.db")
+    cmd="SELECT * FROM People WHERE ID="+str(id)
+    cursor=conn.execute(cmd)
+    profile=None
+    for row in cursor:
+        profile=row
+    conn.close()
+    return profile
+ ```
+ Earler we did somewhat similar to update the items into our database but now in this we will be getting id and name from the database.
+``` 
+fontFace = cv2.FONT_HERSHEY_SIMPLEX
+fontScale = 1
+fontColor = (255, 0, 0)
+ ```
+Making these variables so we don't have to write again and again them while making square around the face and to display the content related to the person we are detecting live.
+
